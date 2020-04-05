@@ -12,6 +12,7 @@ const IndexPage = ({ data }) => (
       className="summary-content"
       dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
     />
+    <Plots />
     <div>
       <h1>References</h1>
       {data.allReferencesYaml.edges.map(({ node }, i) => (
@@ -20,7 +21,6 @@ const IndexPage = ({ data }) => (
         </p>
       ))}
     </div>
-    <Plots />
   </Layout>
 )
 
