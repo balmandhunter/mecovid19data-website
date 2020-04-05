@@ -1,3 +1,5 @@
+const { createProxyMiddleware } = require("http-proxy-middleware")
+
 module.exports = {
   siteMetadata: {
     title: `Maine COVID-19 Data`,
@@ -16,4 +18,15 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
   ],
+  developMiddleware: app => {
+    app.use(
+      "/plot",
+      createProxyMiddleware({
+        target: "http://localhost:5000",
+        pathRewrite: {
+          "/plot": "",
+        },
+      })
+    )
+  },
 }
