@@ -12,6 +12,14 @@ const IndexPage = ({ data }) => (
       className="summary-content"
       dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
     />
+    <div>
+      <h1>References</h1>
+      {data.allReferencesYaml.edges.map(({ node }, i) => (
+        <p key={node.slug} id={node.slug}>
+          <a href={node.url}>{`[${i + 1}]`}</a> {node.text}
+        </p>
+      ))}
+    </div>
     <Plots />
   </Layout>
 )
@@ -24,6 +32,15 @@ export const query = graphql`
         slug
       }
       html
+    }
+    allReferencesYaml {
+      edges {
+        node {
+          slug
+          text
+          url
+        }
+      }
     }
   }
 `
