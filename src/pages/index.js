@@ -1,15 +1,48 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Plots from "../components/plots"
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
-    <SEO title="Maine COVID-19 Data" />
-    <h1>Hello</h1>
+    <SEO title="Home" />
+    <div
+      className="summary-content"
+      dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+    />
+    <div>
+      <h1>References</h1>
+      {data.allReferencesYaml.edges.map(({ node }, i) => (
+        <p key={node.slug} id={node.slug}>
+          <a href={node.url}>{`[${i + 1}]`}</a> {node.text}
+        </p>
+      ))}
+    </div>
     <Plots />
   </Layout>
 )
+
+export const query = graphql`
+  query IndexPageQuery {
+    markdownRemark(frontmatter: { slug: { eq: "summary" } }) {
+      frontmatter {
+        title
+        slug
+      }
+      html
+    }
+    allReferencesYaml {
+      edges {
+        node {
+          slug
+          text
+          url
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage
