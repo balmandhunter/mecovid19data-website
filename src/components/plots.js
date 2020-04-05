@@ -5,7 +5,10 @@ const Plots = () => {
   const data = useStaticQuery(
     graphql`
       query {
-        allMarkdownRemark(sort: { order: ASC, fields: frontmatter___order }) {
+        allMarkdownRemark(
+          sort: { order: ASC, fields: frontmatter___order }
+          filter: { frontmatter: { type: { eq: "plot" } } }
+        ) {
           edges {
             node {
               html
@@ -23,7 +26,11 @@ const Plots = () => {
   return (
     <>
       {data.allMarkdownRemark.edges.map(({ node }) => (
-        <Plot filename={node.frontmatter.filename} html={node.html} />
+        <Plot
+          key={node.frontmatter.slug}
+          filename={node.frontmatter.filename}
+          html={node.html}
+        />
       ))}
     </>
   )
