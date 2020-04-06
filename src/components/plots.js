@@ -4,9 +4,10 @@ import { useStaticQuery, graphql } from "gatsby"
 const MOBILE_BREAKPOINT = 640
 
 function useWidth() {
-  const [width, setWidth] = useState(window.innerWidth)
+  const [width, setWidth] = useState(null)
 
   useEffect(() => {
+    setWidth(window.innerWidth)
     function handleResize() {
       setWidth(window.innerWidth)
     }
@@ -42,6 +43,9 @@ const Plots = () => {
   )
 
   const width = useWidth()
+  if (width === null) {
+    return null
+  }
 
   return (
     <>
