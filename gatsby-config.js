@@ -33,6 +33,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-yaml`,
+    `gatsby-plugin-postcss`,
   ],
   developMiddleware: app => {
     app.use(
