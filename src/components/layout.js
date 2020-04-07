@@ -5,7 +5,7 @@ import "./layout.css"
 
 const Layout = ({ children }) => {
   return (
-    <div className="text-gray-900">
+    <div className="text-gray-900 font-serif text-lg leading-relaxed">
       <main>{children}</main>
     </div>
   )

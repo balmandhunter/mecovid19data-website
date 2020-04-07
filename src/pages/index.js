@@ -17,21 +17,35 @@ const IndexPage = ({ data }) => (
       <h1 className="px-4 mt-4 text-3xl font-semibold">References</h1>
       <div className="p-4">
         {data.allReferencesYaml.edges.map(({ node }, i) => (
-          <p
-            className={`${
-              i > 0 ? "mt-4" : ""
-            } px-4 py-2 rounded-lg bg-gray-200`}
+          <Reference
             key={node.slug}
-            id={node.slug}
-          >
-            <a className="tracking-wider text-blue-700" href={node.url}>{`[${i +
-              1}]`}</a>{" "}
-            {node.text}
-          </p>
+            slug={node.slug}
+            text={node.text}
+            link={node.link}
+            index={i}
+          />
         ))}
       </div>
     </div>
   </Layout>
+)
+
+const Reference = ({ slug, text, link, index }) => (
+  <p
+    className={`${
+      index > 0 ? "pt-2" : ""
+    } pb-2 flex leading-normal text-base sm:text-lg`}
+    id={slug}
+  >
+    <div className="tracking-wider">{`[${index + 1}]`}</div>
+    <div className="ml-2 sm:ml-4">
+      {text}{" "}
+      <a className="text-blue-700 underline hover:no-underline" href={link.url}>
+        {link.label}
+      </a>
+      .
+    </div>
+  </p>
 )
 
 export const query = graphql`
@@ -48,7 +62,10 @@ export const query = graphql`
         node {
           slug
           text
-          url
+          link {
+            label
+            url
+          }
         }
       }
     }

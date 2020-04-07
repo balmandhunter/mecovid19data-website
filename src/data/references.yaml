@@ -1,20 +1,30 @@
 -
   slug: nytimes
-  text: Coronavirus (Covid-19) Data in the United States, NY Times, 27 Mar. 2020, github.com/nytimes/covid-19-data.
-  url: https://github.com/nytimes/covid-19-data
+  text: Coronavirus (Covid-19) Data in the United States, NY Times, 27 Mar. 2020,
+  link:
+    label: github.com/nytimes/covid-19-data
+    url: https://github.com/nytimes/covid-19-data
 -
   slug: press-herald
-  text: Track Maine’s Coronavirus Cases by County. Portland Press Herald, 17 Mar. 2020, www.pressherald.com/2020/03/17/track-maines-coronavirus-cases-by-county/.
-  url: https://www.pressherald.com/2020/03/17/track-maines-coronavirus-cases-by-county/
+  text: Track Maine’s Coronavirus Cases by County. Portland Press Herald, 17 Mar. 2020,
+  link:
+    label: www.pressherald.com/2020/03/17/track-maines-coronavirus-cases-by-county/
+    url: https://www.pressherald.com/2020/03/17/track-maines-coronavirus-cases-by-county/
 -
   slug: me-cdc
-  text: Novel Coronavirus 2019 (COVID-19). Maine Center for Disease Control & Prevention, www.maine.gov/dhhs/mecdc/infectious-disease/epi/airborne/coronavirus.shtml.
-  url: https://www.maine.gov/dhhs/mecdc/infectious-disease/epi/airborne/coronavirus.shtml
+  text: Novel Coronavirus 2019 (COVID-19). Maine Center for Disease Control & Prevention,
+  link:
+    label: www.maine.gov/dhhs/mecdc/infectious-disease/epi/airborne/coronavirus.shtml
+    url: https://www.maine.gov/dhhs/mecdc/infectious-disease/epi/airborne/coronavirus.shtml
 -
   slug: me-census
-  text: \"Maine.\" Measuring America's People, Places and Economy, United States Census Bureau, data.census.gov/cedsci/profile?q=Maine&g=0400000US23.
-  url: ""
+  text: “Maine.” Measuring America's People, Places and Economy, United States Census Bureau,
+  link:
+    label: data.census.gov/cedsci/profile?q=Maine&g=0400000US23
+    url: ""
 -
   slug: census-demographics
-  text: \"ACS Demographic and Housing Estimates.\" American Community Survey, United States Census Bureau.
-  url: ""
+  text: “ACS Demographic and Housing Estimates.” American Community Survey, United States Census Bureau.
+  link:
+    label: ""
+    url: ""

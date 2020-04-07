@@ -13,4 +13,4 @@ Data is sourced from the [Maine CDC](https://www.maine.gov/dhhs/mecdc/infectious
 
 The NY Times surfaced county-level case and death on [GitHub](https://github.com/nytimes/covid-19-data), and that data is used where data is not directly available from the Maine CDC. The dataset is based on reports from state and local health agencies. See the [NY Times US Visualizations Page](https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html) for lots of visualizations on a national level.
 
-When NY Times Data is not available, which is currently only for historic case recovery data, it was manually pulled from the [Portland Press Herald](https://www.pressherald.com/2020/03/17/track-maines-coronavirus-cases-by-county/)'s plot, "Growth of Maine COVID 19 Cases". The Press Herald states that the data is from the Maine CDC.
+When NY Times Data is not available, which is currently only for historic case recovery data, it was manually pulled from the [Portland Press Herald's plot, “Growth of Maine COVID 19 Cases”](https://www.pressherald.com/2020/03/17/track-maines-coronavirus-cases-by-county/). The Press Herald states that the data is from the Maine CDC.

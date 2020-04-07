@@ -68,7 +68,7 @@ const Plot = ({ filename, htmlAst, width }) => {
 
   return (
     <>
-      <figure className="py-4 max-w-screen-md mx-auto md:px-4">
+      <figure className="py-4 max-w-screen-lg mx-auto lg:px-4">
         <embed type="image/svg+xml" src={`/plot/${filename}?size=${size}`} />
       </figure>
       <div className="max-w-screen-sm mx-auto">{renderRemark(htmlAst)}</div>
