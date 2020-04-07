@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
+import renderRemark from "./remark"
+
 const MOBILE_BREAKPOINT = 640
 
 function useWidth() {
@@ -30,7 +32,7 @@ const Plots = () => {
         ) {
           edges {
             node {
-              html
+              htmlAst
               frontmatter {
                 filename
                 slug
@@ -53,7 +55,7 @@ const Plots = () => {
         <Plot
           key={node.frontmatter.slug}
           filename={node.frontmatter.filename}
-          html={node.html}
+          htmlAst={node.htmlAst}
           width={width}
         />
       ))}
@@ -61,18 +63,15 @@ const Plots = () => {
   )
 }
 
-const Plot = ({ filename, html, width }) => {
+const Plot = ({ filename, htmlAst, width }) => {
   const size = width < MOBILE_BREAKPOINT ? "small" : "large"
 
   return (
     <>
-      <figure>
+      <figure className="py-4 max-w-screen-md mx-auto md:px-4">
         <embed type="image/svg+xml" src={`/plot/${filename}?size=${size}`} />
       </figure>
-      <div
-        className="plot-content"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      <div className="max-w-screen-sm mx-auto">{renderRemark(htmlAst)}</div>
     </>
   )
 }
