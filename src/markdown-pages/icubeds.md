@@ -1,6 +1,6 @@
 ---
 type: plot
-order: 11
+order: 12
 filename: icu_beds.svg
 slug: icu-beds
 title: ICU Beds
