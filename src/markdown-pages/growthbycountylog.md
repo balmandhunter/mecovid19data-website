@@ -1,6 +1,6 @@
 ---
 type: plot
-order: 8
+order: 9
 filename: growth_by_county_log.svg
 slug: growth-by-county-log
 title: Growth by County (log)
