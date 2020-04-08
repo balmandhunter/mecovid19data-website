@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Plots from "../components/plots"
+import About from "../components/about"
 import renderRemark from "../components/remark"
 
 const IndexPage = ({ data }) => (
@@ -13,6 +14,7 @@ const IndexPage = ({ data }) => (
       {renderRemark(data.markdownRemark.htmlAst)}
     </div>
     <Plots />
+    <About />
     <div className="max-w-screen-sm mx-auto">
       <h1 className="px-4 mt-4 text-3xl font-semibold">References</h1>
       <div className="p-4">
