@@ -62,7 +62,7 @@ const Plot = ({ filename, htmlAst }) => {
 
   return (
     <>
-      <figure className="py-4 max-w-screen-lg mx-auto lg:px-4">
+      <figure className="py-4 max-w-screen-md mx-auto md:px-4">
         {width === null ? null : (
           <embed
             type="image/svg+xml"
