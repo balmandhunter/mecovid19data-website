@@ -20,11 +20,11 @@
   slug: me-census
   text: “Maine.” Measuring America's People, Places and Economy, United States Census Bureau,
   link:
-    label: data.census.gov/cedsci/profile?q=Maine&g=0400000US23
-    url: ""
+    label: www.census.gov/library/measuring-america.html
+    url: https://www.census.gov/library/measuring-america.html
 -
   slug: census-demographics
   text: “ACS Demographic and Housing Estimates.” American Community Survey, United States Census Bureau.
   link:
-    label: ""
-    url: ""
+    label: www.census.gov/programs-surveys/acs
+    url: https://www.census.gov/programs-surveys/acs
