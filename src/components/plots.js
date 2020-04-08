@@ -44,11 +44,6 @@ const Plots = () => {
     `
   )
 
-  const width = useWidth()
-  if (width === null) {
-    return null
-  }
-
   return (
     <>
       {data.allMarkdownRemark.edges.map(({ node }) => (
@@ -56,20 +51,26 @@ const Plots = () => {
           key={node.frontmatter.slug}
           filename={node.frontmatter.filename}
           htmlAst={node.htmlAst}
-          width={width}
         />
       ))}
     </>
   )
 }
 
-const Plot = ({ filename, htmlAst, width }) => {
-  const size = width < MOBILE_BREAKPOINT ? "small" : "large"
+const Plot = ({ filename, htmlAst }) => {
+  const width = useWidth()
 
   return (
     <>
       <figure className="py-4 max-w-screen-lg mx-auto lg:px-4">
-        <embed type="image/svg+xml" src={`/plot/${filename}?size=${size}`} />
+        {width === null ? null : (
+          <embed
+            type="image/svg+xml"
+            src={`/plot/${filename}?size=${
+              width < MOBILE_BREAKPOINT ? "small" : "large"
+            }`}
+          />
+        )}
       </figure>
       <div className="max-w-screen-sm mx-auto">{renderRemark(htmlAst)}</div>
     </>
