@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Contents from "../components/contents"
 import Plots from "../components/plots"
 import About from "../components/about"
 import renderRemark from "../components/remark"
@@ -10,6 +11,7 @@ import renderRemark from "../components/remark"
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
+    <Contents />
     <div className="max-w-screen-sm mx-auto">
       {renderRemark(data.markdownRemark.htmlAst)}
     </div>

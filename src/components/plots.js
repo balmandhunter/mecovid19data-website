@@ -49,6 +49,7 @@ const Plots = () => {
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <Plot
           key={node.frontmatter.slug}
+          slug={node.frontmatter.slug}
           filename={node.frontmatter.filename}
           htmlAst={node.htmlAst}
         />
@@ -57,12 +58,12 @@ const Plots = () => {
   )
 }
 
-const Plot = ({ filename, htmlAst }) => {
+const Plot = ({ slug, filename, htmlAst }) => {
   const width = useWidth()
 
   return (
     <>
-      <figure className="py-4 max-w-screen-md mx-auto md:px-4">
+      <figure id={slug} className="py-4 max-w-screen-md mx-auto md:px-4">
         {width === null ? null : (
           <embed
             type="image/svg+xml"
