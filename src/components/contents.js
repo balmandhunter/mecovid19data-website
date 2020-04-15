@@ -50,7 +50,7 @@ const Contents = () => {
   return (
     <div className="text-base max-w-screen-sm m-auto xl:fixed">
       <Header isOpen={isOpen} onClick={handleClick} />
-      <div className={`${isOpen ? "" : "hidden xl:block"} px-2 w-64`}>
+      <div className={`${isOpen ? "" : "hidden xl:block"} px-2 xl:w-64`}>
         {contents.map(({ slug, title }, i) => (
           <Link
             className={`${
