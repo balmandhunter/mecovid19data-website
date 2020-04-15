@@ -18,7 +18,9 @@ const IndexPage = ({ data }) => (
     <Plots />
     <About />
     <div className="max-w-screen-sm mx-auto">
-      <h1 className="px-4 mt-4 text-3xl font-semibold">References</h1>
+      <h1 id="references" className="px-4 mt-4 text-3xl font-semibold">
+        References
+      </h1>
       <div className="p-4">
         {data.allReferencesYaml.edges.map(({ node }, i) => (
           <Reference
