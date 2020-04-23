@@ -1,5 +1,5 @@
 ---
-slug: data_details
+slug: data-details
 ---
 
 # Details about the CDC Data 
