@@ -1,5 +1,6 @@
 ---
 slug: data-details
+title: Data Details
 ---
 
 # Details about the CDC Data 
